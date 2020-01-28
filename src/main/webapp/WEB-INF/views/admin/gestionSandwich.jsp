@@ -1,7 +1,7 @@
-<%@include file="header.jsp" %>
-		
-		<div id="content" class="row">
-			<div id="menu" class="col-3">
+<%@include file="../header.jsp" %>
+	
+	<div id="content" class="row">
+			<div id="menuAdmin" class="col-3">
 					<ul>
 						<li><a href="${ctx}/menu/sandwichs">Sandwichs</a></li>
 						<li><a href="${ctx}/menu/viennoiseries">Viennoiseries</a></li>
@@ -12,15 +12,12 @@
 					</ul>
 			</div>
 			<div class="col-9">
-					<img id="imgIndex" src="image/boulangerie3.jpg" height="500">
+					<table class="table">
+						<tr>
+							<th>
+					</table>
 			</div>
 		</div>	
-			
-	<%@include file="footer.jsp" %>
-
-
-
-
-
-
-
+		
+		
+<%@include file="../footer.jsp" %>

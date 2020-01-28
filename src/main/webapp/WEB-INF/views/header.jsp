@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+ <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     
 <!DOCTYPE html>
 <html>
@@ -21,7 +22,7 @@
 
 <body>
 
-	<img id="logo" src="image/logo_Onafaim_1.png" width="100" height="100"></div>
+	<img id="logo" src="${ctx}/image/logo_Onafaim_1.png" width="100" height="100"></div>
 		
 		
 		<div id="header" class="row">
