@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import model.TypeProduit;
 import repositories.ProduitRepository;
 
 @Controller
@@ -17,8 +18,9 @@ public class sandwichController {
 	
 	@GetMapping("/listSandwich")
 	public ModelAndView list() {
-		return new ModelAndView("/admin/listSandwich", "sandiwhs", produitRepository.findAll());
+		return new ModelAndView("/admin/listSandwich", "sandiwhs", produitRepository.findAllByType(TypeProduit.Sandwich));
 	}
 
+	
 	
 }

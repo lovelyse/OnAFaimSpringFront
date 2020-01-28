@@ -1,6 +1,11 @@
 <%@include file="../header.jsp" %>
 	
 	<div class="container" id="content">
+		
+		<div>
+			<a href="${ctx}/editProduit" class="btn btn-link">ajout produit</a>
+		</div>
+		
 		<table class="table">
 			<tr>
 				<th>Libelle</th>
