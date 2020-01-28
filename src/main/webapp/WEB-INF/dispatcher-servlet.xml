@@ -23,6 +23,8 @@
 	<!-- je suis capable dans une jsp d'aller chercher le contenu du dossier en tapant le mapping -->
 	<mvc:resources location="/bootstrap/css/" mapping="/bootstrap/css/**"></mvc:resources> 
 	<mvc:resources location="/bootstrap/js/" mapping="/bootstrap/js/**"></mvc:resources>
+	<mvc:resources location="/style/" mapping="/style/**"></mvc:resources>
+	<mvc:resources location="/image/" mapping="/image/**"></mvc:resources>
 	
 	<!-- gestion des fichiers properties -->
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
