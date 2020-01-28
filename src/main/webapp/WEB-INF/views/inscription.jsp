@@ -53,10 +53,7 @@
 					<button type="submit" class="btn btn-success">sinscrire</button>
 					<a href="${ctx}/index" class="btn btn-warning">annuler</a>
 				</div>
-				<div class="form-check">
-					<form:input type="checkbox" class="form-check-input" id="dropdownCheck"/>
-					<form:label class="form-check-label" for="dropdownCheck">Remember me</form:label>
-				</div>
+				
 		</form:form>
 		
 	<div id="footer" class="row">
