@@ -21,7 +21,7 @@
 
 <body>
 
-	<img id="logo" src="image/logo_Onafaim_1.png" width="100" height="100"></div>
+	<img id="logo" src="${ctx}/image/logo_Onafaim_1.png" width="100" height="100"></div>
 		
 		
 		<div id="header" class="row">
