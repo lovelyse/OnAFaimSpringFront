@@ -26,7 +26,7 @@ public class produitController {
 		return "redirect:/accueil"; //rediriger vers accueil admin
 	}
 	
-	@PostMapping("/admin/saveProduit")
+	@PostMapping("/page/saveProduit")
 	public String saveProduit(@ModelAttribute("produit")@Valid Produit produit, BindingResult br, Model model) {
 		return save(produit, br, model);
 	}
@@ -35,10 +35,10 @@ public class produitController {
 		model.addAttribute("produit", p);
 		model.addAttribute("type", TypeProduit.values());
 		model.addAttribute("taille", TailleProduit.values());
-		return "admin/editProduit";
+		return "page/editProduit";
 	}
 	
-	@GetMapping("/admin/addProduit")
+	@GetMapping("/page/addProduit")
 	public String addProduit(Model model) {
 		return goEdit(new Produit(), model);
 	}
