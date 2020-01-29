@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import model.TypeProduit;
 import repositories.ProduitRepository;
@@ -25,7 +26,7 @@ public class sandwichController {
 	}	
 	
 	@GetMapping("/listSandwich/delete")
-	public String delete(@RequestParam(name="id") Long id) {
+	public String delete(@RequestParam(name="id") Long id, Model model) {
 		produitRepository.deleteById(id);
 		return "redirect:/page/listSandwich";
 	}

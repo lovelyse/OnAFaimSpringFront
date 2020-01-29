@@ -30,23 +30,45 @@ public class produitController {
 	public String save(@ModelAttribute("produit")@Valid Produit produit, BindingResult br, Model model) {
 		System.out.println("test" + produit);
 		if(br.hasErrors()) {
+			model.addAttribute("produit", produit);
 			return "page/editProduit";
 		} else {
-			produitRepository.save(produit);
-			System.out.println("postsave" + produit.getDescription());
-			return "redirect:/accueil"; //rediriger vers accueil admin
+			if(produit.getType()==TypeProduit.Sandwich) {
+				produitRepository.save(produit);
+				return "redirect:/page/listSandwich"; 
+			}
+			else if(produit.getType()==TypeProduit.Viennoiserie) {
+				produitRepository.save(produit);
+				return "redirect:/page/listViennoiserie"; 
+			}
+			else if(produit.getType()==TypeProduit.Boissons) {
+				produitRepository.save(produit);
+				return "redirect:/page/listBoisson";
+			}
+			else if(produit.getType()==TypeProduit.Gateau) {
+				produitRepository.save(produit);
+				return "redirect:/page/listGateau";
+			}
+			return "redirect:/accueil";
 		}
 	}
-	
-//	@PostMapping("/page/saveProduit")
-//	public String saveProduit(@ModelAttribute("produit")@Valid Produit produit, BindingResult br, Model model) {
-//		return save(produit, br, model);
-//	}
-	
+		
 	private String goEdit(Produit p, Model model) {
 		model.addAttribute("produit", p);
 		model.addAttribute("type", TypeProduit.values());
 		model.addAttribute("taille", TailleProduit.values());
+		if(p.getType()==TypeProduit.Sandwich) {
+			model.addAttribute("chemin", "/page/listSandwich");
+		}
+		else if(p.getType()==TypeProduit.Viennoiserie) {
+			model.addAttribute("chemin", "/page/listViennoiserie");
+		}
+		else if(p.getType()==TypeProduit.Boissons) {
+			model.addAttribute("chemin", "/page/listBoisson");
+		}
+		else if(p.getType()==TypeProduit.Gateau) {
+			model.addAttribute("chemin", "/page/listGateau");
+		}
 		return "page/editProduit";
 	}
 	
@@ -55,7 +77,6 @@ public class produitController {
 		return goEdit(new Produit(), model);
 	}
 	
-	//--------- A vérifier si ça fonction via les pages de Thibaut --------
 	@GetMapping("/editProduit")
 	public String edit(@RequestParam(name="id") Long id, Model model) {
 		Optional<Produit> opt= produitRepository.findById(id); //je récupère la personne en base
@@ -69,21 +90,5 @@ public class produitController {
 		
 	}
 	 
-	
-//	@GetMapping("/delete")
-//	public ModelAndView delete(@RequestParam(name="id") Long id) {
-//		produitRepository.deleteById(id);
-//		return new ModelAndView("redirect:/admin/listSandiwch");
-//	}
-//	
-//	@GetMapping("addSandwich")
-//	public ModelAndView add() {
-//		return new ModelAndView("admin/addSandwich", "sandwich", new Produit());
-//	}
-//	
-//	@PostMapping("/save")
-//	public ModelAndView save(@ModelAttribute("sandwich") Produit sandwich) {
-//		produitRepository.save(sandwich);
-//		return new ModelAndView("redirect:/admin/listSandwich");
-//	}
+
 }
