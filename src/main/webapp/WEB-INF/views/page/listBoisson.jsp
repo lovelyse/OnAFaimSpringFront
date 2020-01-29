@@ -1,6 +1,6 @@
 <%@include file="../header.jsp" %>
 
-	<h1>Admin : Gestion viennoiserie</h1>
+	<h1>Admin : Gestion Boissons</h1>
 	
 	
 	
@@ -22,7 +22,7 @@
 					<td>${p.prix}</td>
 					<td>${p.taille}</td>
 					<td><a href="${ctx}/page/editProduit/edit?id=${p.id}" class="btn btn-info">editer</a></td>
-					<td><a href="${ctx}/page/listViennoiserie/delete?id=${p.id}" class="btn btn-danger">supprimer</a></td>
+					<td><a href="${ctx}/page/listBoisson/delete?id=${p.id}" class="btn btn-danger">supprimer</a></td>
 				</tr>
 			</c:forEach>
 		</table>

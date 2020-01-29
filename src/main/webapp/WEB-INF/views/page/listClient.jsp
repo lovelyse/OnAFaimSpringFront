@@ -1,6 +1,6 @@
 <%@include file="../header.jsp" %>
 
-	<h1>Admin : Gestion viennoiserie</h1>
+	<h1>Admin : Gestion compte client</h1>
 	
 	
 	
@@ -10,17 +10,24 @@
 		<table class="table">
 			<tr>
 				<th>id</th>
-				<th>description</th>
-				<th>prix</th>
-				<th>taille</th>
+				<th>Etat</th>
+				<th>date de creation</th>
+				<th>email</th>
+				<th>nom</th>
+				<th>numero</th>
+				<th>prenom</th>
+				<th></th>
 				<th></th>
 			</tr>
-			<c:forEach items="${produit}" var="p">
+			<c:forEach items="${compte}" var="c">
 				<tr>
-					<td>${p.id}</td>
-					<td>${p.description}</td>
-					<td>${p.prix}</td>
-					<td>${p.taille}</td>
+					<td>${c.id}</td>
+					<td>${c.compteEtat}</td>
+					<td>${c.dateCreation}</td>
+					<td>${c.email}</td>
+					<td>${c.nom}</td>
+					<td>${c.numero}</td>
+					<td>${c.prenom}</td>
 					<td><a href="${ctx}/page/editProduit/edit?id=${p.id}" class="btn btn-info">editer</a></td>
 					<td><a href="${ctx}/page/listViennoiserie/delete?id=${p.id}" class="btn btn-danger">supprimer</a></td>
 				</tr>
