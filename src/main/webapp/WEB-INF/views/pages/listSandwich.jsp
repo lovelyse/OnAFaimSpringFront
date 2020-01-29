@@ -3,7 +3,7 @@
 	<div class="container" id="content">
 		
 		<div>
-			<a href="${ctx}/editProduit" class="btn btn-link">ajout produit</a>
+			<a href="${ctx}/admin/addProduit" class="btn btn-link">ajout produit</a>
 		</div>
 		
 		<table class="table">

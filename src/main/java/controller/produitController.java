@@ -1,8 +1,11 @@
 package controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,14 +21,14 @@ public class produitController {
 	@Autowired
 	ProduitRepository produitRepository;
 	
-	public String save(Produit produit, Model model) {
+	private String save(Produit produit, BindingResult br, Model model) {
 		produitRepository.save(produit);
 		return "redirect:/accueil"; //rediriger vers accueil admin
 	}
 	
-	@PostMapping("/saveProduit")
-	public String saveProduit(@ModelAttribute("produit") Produit produit, Model model) {
-		return save(produit, model);
+	@PostMapping("/admin/saveProduit")
+	public String saveProduit(@ModelAttribute("produit")@Valid Produit produit, BindingResult br, Model model) {
+		return save(produit, br, model);
 	}
 	
 	private String goEdit(Produit p, Model model) {
@@ -35,7 +38,7 @@ public class produitController {
 		return "admin/editProduit";
 	}
 	
-	@GetMapping("/addProduit")
+	@GetMapping("/admin/addProduit")
 	public String addProduit(Model model) {
 		return goEdit(new Produit(), model);
 	}
