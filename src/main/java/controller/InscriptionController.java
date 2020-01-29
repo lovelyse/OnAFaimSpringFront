@@ -6,12 +6,16 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import model.Compte;
 import repositories.CompteRepository;
 
 @Controller
+//@RequestMapping("/inscription")
 public class InscriptionController {
 	
 	@Autowired
@@ -19,30 +23,17 @@ public class InscriptionController {
 	
 	
 	@GetMapping("/inscription")
-	public String inscription(Model model) {
-		return "inscription"; 
-	}
-	
-	
-	@GetMapping("/add")
-    public String add(@RequestParam(name="id") Integer id, Model model) { 
-        Compte c = new Compte();
-        model.addAttribute("compte",c);
-        return "/index";
+    public ModelAndView add() { 
+        return new ModelAndView("inscription", "compte", new Compte());
     }
 	
-	
-	public String save(@ModelAttribute("compte") Compte compte, Model model) {
-		model.addAttribute("compte", c);
-		return save (compte, model); 
+	@PostMapping("/save")
+	public ModelAndView save(@ModelAttribute("compte") Compte compte) {
+		compteRepository.save(compte); 
+		return new ModelAndView("redirect:/accueil"); 
 	}
 	
 	
-	
-	@GetMapping("/delete")
-	public String delete(@RequestParam(name="id") Integer id) {
-		compteRepository.deleteById(id);
-		return "redirect:/index"; 
-	}
+
 	
 }
