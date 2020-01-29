@@ -4,7 +4,7 @@
 		
 		<h1>Edition d'un sandwich</h1>
 		
-		<form:form action="save" method="post" modelAttribut="produit">
+		<form:form action="saveProduit" method="post" modelAttribut="produit">
 			<form:hidden path="version"/>
 			
 			<div class="form-group">
