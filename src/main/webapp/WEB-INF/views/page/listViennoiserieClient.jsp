@@ -18,6 +18,7 @@
 					</div>
 				</c:forEach>
 			</div>
+			
 </div>	
 
 <%@include file="../footer.jsp" %>
