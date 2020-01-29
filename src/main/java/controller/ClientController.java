@@ -15,10 +15,10 @@ public class ClientController {
 	ProduitRepository produitRepository;
 
 	
-//	@GetMapping("/page/listSandwichClient")
-//	public ModelAndView listSandwich() {
-//		return new ModelAndView("/page/listSandwichClient", "sandwichs", produitRepository.findAllByType(TypeProduit.Sandwich)); 
-//	}
+	@GetMapping("/page/listSandwichClient")
+	public ModelAndView listSandwich() {
+		return new ModelAndView("/page/listSandwichClient", "sandwichs", produitRepository.findAllByType(TypeProduit.Sandwich)); 
+	}
 	
 	
 	@GetMapping("/page/listViennoiserieClient")
