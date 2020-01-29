@@ -15,9 +15,9 @@ public class sandwichController {
 	@Autowired
 	ProduitRepository produitRepository;
 	
-	@GetMapping("/admin/listSandwich")
+	@GetMapping("/page/listSandwich")
 	public ModelAndView list() {
-		return new ModelAndView("/admin/listSandwich", "sandwichs", produitRepository.findAllByType(TypeProduit.Sandwich));
+		return new ModelAndView("/page/listSandwich", "sandwichs", produitRepository.findAllByType(TypeProduit.Sandwich));
 	}
 
 	
