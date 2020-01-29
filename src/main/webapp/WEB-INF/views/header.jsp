@@ -35,3 +35,40 @@
 				<a href="${ctx}/inscription" class="btn btn-light">Inscription</a>
 			</div>
 		</div> 
+		
+		
+		
+		
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item">
+		        <a class="nav-link" href="${ctx}/menu/sandwichs">Sandwichs</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="${ctx}/menu/viennoiseries">Viennoiseries</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="${ctx}/menu/gateaux">Gâteaux</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="${ctx}/menu/boissons">Boissons</a>
+		      </li>
+		       <li class="nav-item">
+		        <a class="nav-link" href="${ctx}/menu/menus">Menus</a>
+		      </li>
+		       <li class="nav-item">
+		        <a class="nav-link" href="${ctx}/menu/devis">Devis</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="${ctx}/admin/gestionClient">Client</a>
+		      </li>
+		    </ul>
+		</div>
+	</nav>	
+		
+		
+		
+		
+		
+		
