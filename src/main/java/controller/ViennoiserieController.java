@@ -20,28 +20,22 @@ public class ViennoiserieController {
 	
 	
 	
-	@GetMapping("/client/viennoiserie")
-	public String indexClient() {
-		return "client/viennoiserie";
-	}
-	
-	
-	@GetMapping("/admin/listViennoiserie")
+	@GetMapping("/page/listViennoiserie")
 	public String listAdmin(Model model) {
 		model.addAttribute("produit", produitRepository.findAllByType(TypeProduit.Viennoiserie));
-		return "admin/listViennoiserie";
+		return "page/listViennoiserie";
 	}
 	
-	@GetMapping("/admin/listViennoiserie/delete")
+	@GetMapping("/page/listViennoiserie/delete")
 	public String delete(@RequestParam(name="id") Long id) {
 		produitRepository.deleteById(id);
-		return "redirect:/admin/listViennoiserie";
+		return "redirect:/page/listViennoiserie";
 	}
 	
-	@GetMapping("/admin/listViennoiserie/edit")
+	@GetMapping("/page/listViennoiserie/edit")
 	public String edit(@RequestParam(name="id") Long id) {
 		produitRepository.deleteById(id);
-		return "admin/editViennoiserie";
+		return "page/editViennoiserie";
 	}
 	
 	private String goEdit(Produit p, Model model) {

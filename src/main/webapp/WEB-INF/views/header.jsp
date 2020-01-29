@@ -22,7 +22,7 @@
 
 <body>
 
-	<img id="logo" src="${ctx}/image/logo_Onafaim_1.png" width="100" height="100"></div>
+	<a href="${ctx}/accueil"><img id="logo" src="${ctx}/image/logo_Onafaim_1.png" width="100" height="100"></div></a>
 		
 		
 		<div id="header" class="row">
@@ -43,19 +43,19 @@
 	  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
 		      <li class="nav-item">
-		        <a class="nav-link" href="${ctx}/page/listSandwichs">Sandwichs</a>
+		        <a class="nav-link" href="${ctx}/page/listSandwich">Sandwichs</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="${ctx}/page/listViennoiseries">Viennoiseries</a>
+		        <a class="nav-link" href="${ctx}/page/listViennoiserie">Viennoiseries</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="${ctx}/page/listGateaux">Gâteaux</a>
+		        <a class="nav-link" href="${ctx}/page/listGateau">Gâteaux</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="${ctx}/page/listBoissons">Boissons</a>
+		        <a class="nav-link" href="${ctx}/page/listBoisson">Boissons</a>
 		      </li>
 		       <li class="nav-item">
-		        <a class="nav-link" href="${ctx}/page/menus">Menus</a>
+		        <a class="nav-link" href="${ctx}/page/menu">Menus</a>
 		      </li>
 		       <li class="nav-item">
 		        <a class="nav-link" href="${ctx}/page/devis">Devis</a>
