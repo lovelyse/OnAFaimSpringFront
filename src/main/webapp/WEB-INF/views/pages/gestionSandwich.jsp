@@ -94,6 +94,6 @@
 					<a href="${ctx}/accueil" class="btn btn-warning">annuler</a>
 				</div>
 				
-		</form:form>
+
 	</div>	
 <%@include file="../footer.jsp" %>

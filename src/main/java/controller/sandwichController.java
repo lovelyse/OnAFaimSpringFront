@@ -21,8 +21,8 @@ public class sandwichController {
 	}
 
 	
-	@GetMapping("/client/gestionSandwich")
-	public ModelAndView gestionlist() {
-		return ModelAndView("/client/gestionSandwich", "sandwich", produitRepository.findAll()); 
-	}
+//	@GetMapping("/client/gestionSandwich")
+//	public ModelAndView gestionlist() {
+//		return ModelAndView("/client/gestionSandwich", "sandwich", produitRepository.findAll()); 
+//	}
 }
