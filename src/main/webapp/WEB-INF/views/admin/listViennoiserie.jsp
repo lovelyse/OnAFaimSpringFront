@@ -3,6 +3,7 @@
 	<h1>Admin : Gestion viennoiserie</h1>
 	
 	
+	
 	<div class="container">
 	
 	
@@ -20,8 +21,8 @@
 					<td>${p.description}</td>
 					<td>${p.prix}</td>
 					<td>${p.taille}</td>
-					<td><a href="editViennoiserie?id=${p.id}" class="btn btn-info">editer</a></td>
-					<td><a href="${ctx}/personne/delete?id=${p.id}" class="btn btn-danger">supprimer</a></td>
+					<td><a href="${ctx}/admin/editViennoiserie/edit?id=${p.id}" class="btn btn-info">editer</a></td>
+					<td><a href="${ctx}/admin/listViennoiserie/delete?id=${p.id}" class="btn btn-danger">supprimer</a></td>
 				</tr>
 			</c:forEach>
 		</table>
