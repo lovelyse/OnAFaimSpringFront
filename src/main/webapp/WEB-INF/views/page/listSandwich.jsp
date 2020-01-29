@@ -13,6 +13,8 @@
 				<th>Prix</th>
 				<th>Description</th>
 				<th>Photo</th>
+				<th></th>
+				<th></th>
 			</tr>
 			
 			<c:forEach items="${sandwichs}" var="s">
@@ -22,6 +24,8 @@
 					<td>${s.prix}</td>
 					<td>${s.description}</td>
 					<td>${s.photo}</td>
+					<td><a href="${ctx}/page/editProduit?id=${p.id}" class="btn btn-info">editer</a></td>
+					<td><a href="${ctx}/page/listViennoiserie/delete?id=${p.id}" class="btn btn-danger">supprimer</a></td>
 				</tr>
 			</c:forEach>
 		</table>

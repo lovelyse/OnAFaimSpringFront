@@ -28,7 +28,7 @@
 					<td>${c.nom}</td>
 					<td>${c.numero}</td>
 					<td>${c.prenom}</td>
-					<td><a href="${ctx}/page/editProduit/edit?id=${p.id}" class="btn btn-info">editer</a></td>
+					<td><a href="${ctx}/page/editProduit?id=${p.id}" class="btn btn-info">editer</a></td>
 					<td><a href="${ctx}/page/listViennoiserie/delete?id=${p.id}" class="btn btn-danger">supprimer</a></td>
 				</tr>
 			</c:forEach>

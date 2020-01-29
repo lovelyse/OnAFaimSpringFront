@@ -60,8 +60,11 @@ public class produitController {
 		Produit p=null;
 		if(opt.isPresent()) { //si elle existe je continue
 			p=opt.get(); 
+			return goEdit(p, model);
+		} else {
+			return "addProduit";
 		}
-		return goEdit(p, model);
+		
 	}
 	 
 	

@@ -9,19 +9,20 @@
 	
 		<table class="table">
 			<tr>
-				<th>id</th>
+				<th>libelle</th>
 				<th>description</th>
 				<th>prix</th>
 				<th>taille</th>
 				<th></th>
+				<th></th>
 			</tr>
 			<c:forEach items="${produit}" var="p">
 				<tr>
-					<td>${p.id}</td>
+					<td>${p.libelle}</td>
 					<td>${p.description}</td>
 					<td>${p.prix}</td>
 					<td>${p.taille}</td>
-					<td><a href="${ctx}/page/editProduit/edit?id=${p.id}" class="btn btn-info">editer</a></td>
+					<td><a href="${ctx}/page/editProduit?id=${p.id}" class="btn btn-info">editer</a></td>
 					<td><a href="${ctx}/page/listViennoiserie/delete?id=${p.id}" class="btn btn-danger">supprimer</a></td>
 				</tr>
 			</c:forEach>
