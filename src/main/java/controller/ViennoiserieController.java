@@ -1,21 +1,27 @@
 package controller;
 
+import java.util.Optional;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
-import repositories.CompteRepository;
-import repositories.DevisRepository;
-import repositories.ProduitRepository;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import model.Compte;
+import model.Etat;
 import model.Produit;
 import model.TypeCompte;
 import model.TypeProduit;
+import repositories.CompteRepository;
+import repositories.DevisRepository;
+import repositories.ProduitRepository;
 
 @Controller
 @RequestMapping("/page")
@@ -91,6 +97,8 @@ public class ViennoiserieController { // Nom controller a changer
 		}
 	
 	
+		
+		
 		//------------------------------  CLIENT ------------------------------------------
 		@GetMapping("/listClient")
 		public String listClient(Model model) {
@@ -103,6 +111,43 @@ public class ViennoiserieController { // Nom controller a changer
 			compteRepository.deleteById(id);
 			return "redirect:/page/listClient";
 		}
+		
+		@GetMapping("/editCompte")
+		public String edit(@RequestParam(name="id") Long id, Model model) {
+			Optional<Compte> opt= compteRepository.findById(id); //je récupère la personne en base
+			Compte c=null;
+			if(opt.isPresent()) { //si elle existe je continue
+				c=opt.get(); 
+				return goEdit(c, model);
+			} else {
+				return "addCompte";
+			}		
+		}
+		
+		private String goEdit(Compte c, Model model) {
+			model.addAttribute("compte", c);
+			model.addAttribute("type", TypeCompte.values());
+			model.addAttribute("etat", Etat.values()); // on n'affiche pas les commandes et devis associés ?
+			return "page/editCompte";
+		}
+		
+		@GetMapping("/addCompte")
+		public String addCompte(Model model) {
+			return goEdit(new Compte(), model);
+		}
+		
+		@PostMapping("/saveCompte")
+		public String save(@ModelAttribute("compte") @Valid Compte compte, BindingResult br, Model model) {
+			System.out.println("--------------------------------save compte");
+			if(br.hasErrors()) {
+				System.out.println("--------------------------------has errors");
+				return "page/editCompte";
+			} else {
+				compteRepository.save(compte);
+				return "redirect:/accueil"; //rediriger vers accueil admin
+			}
+		}
+		
 	
 	
 	
