@@ -1,6 +1,6 @@
 <%@include file="../header.jsp" %>
 
-	<h1>Admin : Gestion viennoiserie</h1>
+	<h1>Admin : Gestion Gateau</h1>
 	
 	
 	
@@ -21,15 +21,15 @@
 					<td>${p.description}</td>
 					<td>${p.prix}</td>
 					<td>${p.taille}</td>
-					<td><a href="${ctx}/admin/editViennoiserie/edit?id=${p.id}" class="btn btn-info">editer</a></td>
-					<td><a href="${ctx}/admin/listViennoiserie/delete?id=${p.id}" class="btn btn-danger">supprimer</a></td>
+					<td><a href="${ctx}/page/editProduit/edit?id=${p.id}" class="btn btn-info">editer</a></td>
+					<td><a href="${ctx}/page/listViennoiserie/delete?id=${p.id}" class="btn btn-danger">supprimer</a></td>
 				</tr>
 			</c:forEach>
 		</table>
-		
+	
 		<div>
-			<a href="${ctx}/admin/editViennoiserie" class="btn btn-link">Ajouter viennoiserie</a>
-		</div>
+            <a href="${ctx}/page/addProduit" class="btn btn-link">ajout produit</a>
+        </div>
 		
 		
 	</div>
