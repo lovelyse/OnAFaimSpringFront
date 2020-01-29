@@ -28,10 +28,12 @@ public class produitController {
 	
 	@PostMapping("/save")
 	public String save(@ModelAttribute("produit")@Valid Produit produit, BindingResult br, Model model) {
+		System.out.println("test" + produit);
 		if(br.hasErrors()) {
 			return "page/editProduit";
 		} else {
 			produitRepository.save(produit);
+			System.out.println("postsave" + produit.getDescription());
 			return "redirect:/accueil"; //rediriger vers accueil admin
 		}
 	}

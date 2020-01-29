@@ -6,6 +6,7 @@
 		
 	<form:form action="save" method="post" modelAttribute="produit">
 			<form:hidden path="version"/>
+			<form:hidden path="id"/>
 			
 			<div class="form-group">
 				<form:label path="libelle">Libelle :</form:label>
@@ -30,8 +31,9 @@
 			
 			<div class="form-group">
 				<form:label path="description">Description :</form:label>
-				<form:input path="description" cssClass="form-control"/>	
+				<form:input path="description" cssClass="form-control"/>
 			</div>
+			
 			
 <!-- 			<div class="form-group"> -->
 <%-- 				<form:label path="photo">Photo :</form:label> --%>
