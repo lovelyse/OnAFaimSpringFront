@@ -16,6 +16,7 @@
 				<th>nom</th>
 				<th>numero</th>
 				<th>prenom</th>
+				<th>mot de passe</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -28,14 +29,15 @@
 					<td>${c.nom}</td>
 					<td>${c.numero}</td>
 					<td>${c.prenom}</td>
-					<td><a href="${ctx}/page/editProduit?id=${p.id}" class="btn btn-info">editer</a></td>
-					<td><a href="${ctx}/page/listViennoiserie/delete?id=${p.id}" class="btn btn-danger">supprimer</a></td>
+					<td>${c.mdp}</td>
+					<td><a href="${ctx}/page/editCompte?id=${c.id}" class="btn btn-info">editer</a></td>
+					<td><a href="${ctx}/page/listClient/delete?id=${c.id}" class="btn btn-danger">supprimer</a></td>
 				</tr>
 			</c:forEach>
 		</table>
 	
 		<div>
-            <a href="${ctx}/page/addProduit" class="btn btn-link">ajout produit</a>
+            <a href="${ctx}/page/addCompte" class="btn btn-link">ajout compte</a>
         </div>
 		
 		
