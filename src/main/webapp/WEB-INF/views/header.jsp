@@ -32,7 +32,7 @@
 				
 			<div class="col-2">
 			<!-- quand on aura géré la connexion, se baser sur index dans le OnAFaimJpaBack -->
-				<a href="${ctx}/inscription" class="btn btn-light">Inscription</a>
+				<a href="${ctx}/page/inscription" class="btn btn-light">Inscription</a>
 			</div>
 		</div> 
 		
@@ -43,25 +43,25 @@
 	  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
 		      <li class="nav-item">
-		        <a class="nav-link" href="${ctx}/menu/sandwichs">Sandwichs</a>
+		        <a class="nav-link" href="${ctx}/page/listSandwichs">Sandwichs</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="${ctx}/menu/viennoiseries">Viennoiseries</a>
+		        <a class="nav-link" href="${ctx}/page/listViennoiseries">Viennoiseries</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="${ctx}/menu/gateaux">Gâteaux</a>
+		        <a class="nav-link" href="${ctx}/page/listGateaux">Gâteaux</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="${ctx}/menu/boissons">Boissons</a>
+		        <a class="nav-link" href="${ctx}/page/listBoissons">Boissons</a>
 		      </li>
 		       <li class="nav-item">
-		        <a class="nav-link" href="${ctx}/menu/menus">Menus</a>
+		        <a class="nav-link" href="${ctx}/page/menus">Menus</a>
 		      </li>
 		       <li class="nav-item">
-		        <a class="nav-link" href="${ctx}/menu/devis">Devis</a>
+		        <a class="nav-link" href="${ctx}/page/devis">Devis</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="${ctx}/admin/gestionClient">Client</a>
+		        <a class="nav-link" href="${ctx}/page/gestionClient">Client</a>
 		      </li>
 		    </ul>
 		</div>
