@@ -42,12 +42,14 @@
 
 			<div>
 				<button type="submit" class="btn btn-success">envoyer</button>
-				<a href="${ctx}/accueil" class="btn btn-warning">annuler</a>
+				<a href="${ctx}${chemin}" class="btn btn-warning">annuler</a>
 			</div>
 			
 		</form:form>
 	
 	</div>	
+	<br><br><br><br><br><br><br><br><br>
+	
 		
 		
 <%@include file="../footer.jsp" %>

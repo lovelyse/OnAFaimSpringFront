@@ -22,7 +22,7 @@
 					<td><a href="${ctx}/page/listSandwich/delete?id=${p.id}" class="btn btn-danger">supprimer</a></td>
 				</tr>
 			</c:forEach>
-		</table>
+		</table>	
 	
 		<div>
             <a href="${ctx}/page/addProduit" class="btn btn-link">ajout produit</a>
