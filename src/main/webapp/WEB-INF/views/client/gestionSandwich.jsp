@@ -1,9 +1,74 @@
 <%@include file="../header.jsp" %>
 
 
-<div class="container">
-		<h1>Liste des sandwich</h1>
-		
+<div id="content" class="col-8">
+		<h2>Liste des sandwich</h2>
+			<div class="row">
+				<div class="crew col-2">
+					<h4>Poulet</h4>
+					<table>
+						<tr>
+							<td>demi</td>
+							<td>2</td>
+							<td><button></button></td>
+						</tr>
+						<tr>
+							<td>grand</td>
+							<td>4</td>
+							<td><button></button></td>
+						</tr>
+					</table>
+				</div>
+				<div class="crew col-2">
+					<h4>Saumon</h4>
+					<table>
+						<tr>
+							<td>demi</td>
+							<td>2.5</td>
+							<td><button></button></td>
+						</tr>
+						<tr>
+							<td>grand</td>
+							<td>5</td>
+							<td><button></button></td>
+						</tr>
+					</table>
+				</div>
+				<div class="crew col-2">
+					<h4>Jambon</h4>
+					<table>
+						<tr>
+							<td>demi</td>
+							<td>1.5</td>
+							<td><button></button></td>
+						</tr>
+						<tr>
+							<td>grand</td>
+							<td>3</td>
+							<td><button></button></td>
+						</tr>
+					</table>
+				</div>
+				<div class="crew col-2">
+					<h4>Vegetarien</h4>
+					<table>
+						<tr>
+							<td>demi</td>
+							<td>3.5</td>
+							<td><button></button></td>
+						</tr>
+						<tr>
+							<td>grand</td>
+							<td>7</td>
+							<td><button></button></td>
+						</tr>
+					</table>
+				</div>
+				
+				
+			</div>
+				
+				
 				<div class="form-group">
 					<form:label path="nom">nom:</form:label>
 					<form:input path="nom" cssClass="form-control"/>

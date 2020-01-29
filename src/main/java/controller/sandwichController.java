@@ -10,17 +10,19 @@ import model.TypeProduit;
 import repositories.ProduitRepository;
 
 @Controller
-@RequestMapping("/admin")
 public class sandwichController {
 
 	@Autowired
 	ProduitRepository produitRepository;
 	
-	@GetMapping("/listSandwich")
+	@GetMapping("/admin/listSandwich")
 	public ModelAndView list() {
-		return new ModelAndView("/admin/listSandwich", "sandiwhs", produitRepository.findAllByType(TypeProduit.Sandwich));
+		return new ModelAndView("/admin/listSandwich", "sandwichs", produitRepository.findAllByType(TypeProduit.Sandwich));
 	}
 
 	
-	
+	@GetMapping("/client/gestionSandwich")
+	public ModelAndView gestionlist() {
+		return ModelAndView("/client/gestionSandwich", "sandwich", produitRepository.findAll()); 
+	}
 }
