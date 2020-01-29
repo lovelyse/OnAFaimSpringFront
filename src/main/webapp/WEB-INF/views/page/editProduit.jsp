@@ -4,27 +4,28 @@
 		
 		<h1>Edition d'un sandwich</h1>
 		
-		<form:form action="saveProduit" method="post" modelAttribut="produit">
+	<form:form action="save" method="post" modelAttribute="produit">
 			<form:hidden path="version"/>
 			
 			<div class="form-group">
 				<form:label path="libelle">Libelle :</form:label>
-				<form:input path="libelle" cssClass="form-control"/>	
+				<form:input path="libelle" cssClass="form-control"/>
+				<form:errors path="libelle" cssClass="alert alert-danger" element="div"></form:errors>	
 			</div>
 			
 			<div class="form-group">
-				<form:label path="typeProduit">Type :</form:label>
-				<form:select path="typeProduit" items="${type}" cssClass="form-control"/>
+				<form:label path="type">Type :</form:label>
+				<form:select path="type" items="${type}" cssClass="form-control"/>
 			</div>
 			
 			<div class="form-group">
-				<form:label path="tailleProduit">Taille :</form:label>
-				<form:select path="tailleProduit" items="${taille}" cssClass="form-control"/>
+				<form:label path="taille">Taille :</form:label>
+				<form:select path="taille" items="${taille}" cssClass="form-control"/>
 			</div>
 			
 			<div class="form-group">
 				<form:label path="prix">Prix :</form:label>
-				<form:input path="prix" cssClass="form-control"/>	
+				<form:input path="prix" cssClass="form-control"/>
 			</div>
 			
 			<div class="form-group">
@@ -36,6 +37,11 @@
 <%-- 				<form:label path="photo">Photo :</form:label> --%>
 <%-- 				<form:input path="photo" cssClass="form-control"/>	 --%>
 <!-- 			</div> -->
+
+			<div>
+				<button type="submit" class="btn btn-success">envoyer</button>
+				<a href="${ctx}/accueil" class="btn btn-warning">annuler</a>
+			</div>
 			
 		</form:form>
 	
